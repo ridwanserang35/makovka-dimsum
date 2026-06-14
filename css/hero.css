@@ -1,0 +1,138 @@
+/* hero.css - Hero Section Styles */
+
+.hero {
+  min-height: 100vh;
+  padding-top: 76px;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Glowing Effect */
+.hero::after {
+  content: "";
+  position: absolute;
+  width: 380px;
+  height: 380px;
+  background: var(--red);
+  right: -120px;
+  bottom: -120px;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.65;
+  animation: glow 8s ease-in-out infinite;
+}
+
+@keyframes glow {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.65;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.85;
+  }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 720px;
+  padding: 80px 0;
+  animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero h1 {
+  font-size: clamp(42px, 7vw, 78px);
+  line-height: 1.05;
+  font-weight: 900;
+  margin-bottom: 24px;
+  letter-spacing: -2px;
+  animation: fadeInUp 1s ease-out 0.2s backwards;
+}
+
+.hero h1 strong {
+  color: var(--red);
+  text-shadow: 0 0 24px rgba(229, 9, 20, 0.55);
+  display: inline-block;
+  animation: textGlow 3s ease-in-out infinite;
+}
+
+@keyframes textGlow {
+  0%, 100% {
+    text-shadow: 0 0 24px rgba(229, 9, 20, 0.55);
+  }
+  50% {
+    text-shadow: 0 0 36px rgba(229, 9, 20, 0.85);
+  }
+}
+
+.hero p {
+  font-size: 19px;
+  color: var(--text-white-muted);
+  max-width: 620px;
+  margin-bottom: 34px;
+  line-height: 1.7;
+  animation: fadeInUp 1s ease-out 0.4s backwards;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  animation: fadeInUp 1s ease-out 0.6s backwards;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .hero {
+    background-attachment: scroll;
+  }
+
+  .hero-content {
+    padding: 60px 0;
+  }
+
+  .hero::after {
+    width: 280px;
+    height: 280px;
+    right: -80px;
+    bottom: -80px;
+  }
+}
+
+@media (max-width: 520px) {
+  .hero h1 {
+    font-size: 42px;
+  }
+
+  .hero p {
+    font-size: 17px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    justify-content: center;
+    width: 100%;
+  }
+}

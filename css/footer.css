@@ -1,0 +1,103 @@
+/* footer.css - Footer Styles */
+
+footer {
+  background: #050505;
+  color: var(--white);
+  padding: 56px 0 24px;
+  border-top: 3px solid var(--red);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  gap: 32px;
+  margin-bottom: 36px;
+}
+
+.footer-brand h3 {
+  font-size: 28px;
+  margin-bottom: 14px;
+  font-weight: 900;
+}
+
+.footer-brand h3 span {
+  color: var(--red);
+  text-shadow: 0 0 20px var(--red-glow);
+}
+
+.footer-brand p {
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.footer-col h4 {
+  margin-bottom: 16px;
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--white);
+}
+
+.footer-col a,
+.footer-col p {
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.footer-col a {
+  display: block;
+  margin-bottom: 10px;
+  transition: var(--transition-base);
+  position: relative;
+  padding-left: 0;
+}
+
+.footer-col a:hover {
+  color: var(--red);
+  padding-left: 8px;
+}
+
+.footer-col a::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  opacity: 0;
+  transition: var(--transition-base);
+}
+
+.footer-col a:hover::before {
+  opacity: 1;
+  left: 0;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 22px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 14px;
+}
+
+.footer-bottom p {
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+}
+
+@media (max-width: 520px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  footer {
+    padding: 42px 0 20px;
+  }
+}
