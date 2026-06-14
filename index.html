@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Makovka - Dimsum & Jajanan Enak</title>
+    <title>Makovka - Premium Dimsum</title>
     <style>
         * {
             margin: 0;
@@ -13,137 +13,204 @@
         
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            padding: 20px;
+            background: #f5f5f5;
+            color: #333;
         }
         
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-        }
-        
+        /* Header - Corporate Style */
         header {
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
             color: white;
-            padding: 40px 30px;
+            padding: 60px 20px;
             text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
         
         header h1 {
-            font-size: 3em;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            font-size: 3.5em;
+            margin-bottom: 15px;
+            font-weight: 700;
+            letter-spacing: 2px;
         }
         
         header p {
-            font-size: 1.2em;
-            opacity: 0.95;
-        }
-        
-        .info-box {
-            background: #fff3cd;
-            border-left: 5px solid #ffc107;
-            padding: 20px;
-            margin: 20px 30px;
-            border-radius: 8px;
-        }
-        
-        .info-box h3 {
-            color: #856404;
-            margin-bottom: 10px;
             font-size: 1.3em;
+            opacity: 0.95;
+            font-weight: 300;
         }
         
-        .info-box p {
-            color: #856404;
+        /* Navigation */
+        nav {
+            background: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav ul {
+            max-width: 1200px;
+            margin: 0 auto;
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            padding: 0;
+        }
+        
+        nav li {
+            margin: 0;
+        }
+        
+        nav a {
+            display: block;
+            padding: 20px 30px;
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        
+        nav a:hover {
+            background: #3498db;
+            color: white;
+        }
+        
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        
+        /* About Section */
+        .about {
+            background: white;
+            padding: 60px 40px;
+            margin-bottom: 60px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .about h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+        
+        .about p {
+            font-size: 1.1em;
             line-height: 1.8;
-            font-size: 1.05em;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto 30px;
         }
         
-        .info-box a {
-            color: #007bff;
+        /* Contact Info */
+        .contact-info {
+            background: linear-gradient(135deg, #3498db 0%, #2c3e50 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 10px;
+            margin-bottom: 60px;
+            text-align: center;
+        }
+        
+        .contact-info h3 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        
+        .contact-info p {
+            font-size: 1.2em;
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+        
+        .contact-info a {
+            color: #fff;
             text-decoration: none;
             font-weight: bold;
+            border-bottom: 2px solid rgba(255,255,255,0.3);
+            transition: border-color 0.3s;
         }
         
-        .info-box a:hover {
-            text-decoration: underline;
+        .contact-info a:hover {
+            border-bottom-color: white;
         }
         
+        /* Products Section */
         .products {
-            padding: 30px;
+            margin-bottom: 60px;
         }
         
         .products h2 {
             text-align: center;
             font-size: 2.5em;
-            margin-bottom: 30px;
-            color: #333;
+            margin-bottom: 50px;
+            color: #2c3e50;
         }
         
-        .grid {
+        .product-list {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
         }
         
-        .card {
+        .product-card {
             background: white;
-            border-radius: 15px;
+            border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             transition: transform 0.3s, box-shadow 0.3s;
         }
         
-        .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
         }
         
-        .card img {
+        .product-card img {
             width: 100%;
-            height: 250px;
+            height: 280px;
             object-fit: cover;
         }
         
-        .card-content {
-            padding: 20px;
+        .product-info {
+            padding: 30px;
         }
         
-        .card-content h3 {
-            font-size: 1.5em;
-            margin-bottom: 10px;
-            color: #333;
+        .product-info h3 {
+            font-size: 1.6em;
+            margin-bottom: 15px;
+            color: #2c3e50;
         }
         
-        .card-content p {
+        .product-info p {
             color: #666;
             line-height: 1.6;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
+            font-size: 1em;
         }
         
         .price {
             font-size: 1.8em;
             font-weight: bold;
-            color: #f5576c;
-            margin-bottom: 15px;
+            color: #3498db;
+            margin-bottom: 20px;
         }
         
         .order-btn {
             display: inline-block;
             width: 100%;
-            padding: 12px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 15px;
+            background: linear-gradient(135deg, #3498db 0%, #2c3e50 100%);
             color: white;
             text-align: center;
             text-decoration: none;
-            border-radius: 8px;
-            font-weight: bold;
+            border-radius: 5px;
+            font-weight: 600;
+            font-size: 1.1em;
             transition: opacity 0.3s;
         }
         
@@ -151,119 +218,134 @@
             opacity: 0.9;
         }
         
+        /* Footer */
         footer {
-            background: #333;
+            background: #2c3e50;
             color: white;
             text-align: center;
-            padding: 30px;
+            padding: 40px 20px;
         }
         
         footer p {
-            margin: 5px 0;
+            margin: 8px 0;
+            font-size: 1em;
         }
         
+        /* Responsive */
         @media (max-width: 768px) {
             header h1 {
+                font-size: 2.2em;
+            }
+            
+            nav ul {
+                flex-direction: column;
+            }
+            
+            nav a {
+                padding: 15px;
+                border-bottom: 1px solid #eee;
+            }
+            
+            .products h2,
+            .about h2 {
                 font-size: 2em;
             }
             
-            .products h2 {
-                font-size: 1.8em;
-            }
-            
-            .grid {
+            .product-list {
                 grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
+    <header>
+        <h1>Makovka</h1>
+        <p>Premium Quality Dimsum</p>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#about">Tentang Kami</a></li>
+            <li><a href="#products">Produk</a></li>
+            <li><a href="#contact">Kontak</a></li>
+        </ul>
+    </nav>
+    
     <div class="container">
-        <header>
-            <h1>🥟 Makovka</h1>
-            <p>Dimsum & Jajanan Enak Berkualitas</p>
-        </header>
+        <section id="about" class="about">
+            <h2>Tentang Makovka</h2>
+            <p>Makovka adalah brand dimsum premium yang menghadirkan cita rasa autentik dengan kualitas terbaik. Setiap produk kami dibuat dengan bahan pilihan dan resep khas yang telah teruji. Kami berkomitmen untuk memberikan pengalaman kuliner dimsum yang tak terlupakan.</p>
+            <p>Dengan berbagai varian rasa yang inovatif, Makovka hadir untuk memenuhi selera pecinta dimsum di Indonesia.</p>
+        </section>
         
-        <div class="info-box">
-            <h3>📍 Lokasi & Kontak</h3>
-            <p>
-                <strong>Alamat:</strong> Pusat Jajanan Bunderan Perumnas Cibeber (PCI)<br>
-                <strong>Telepon:</strong> <a href="tel:+6285880880476">+62 858-8088-0476</a><br>
-                <strong>WhatsApp:</strong> <a href="https://wa.me/6285880880476">Chat via WhatsApp</a>
-            </p>
-        </div>
+        <section id="contact" class="contact-info">
+            <h3>Hubungi Kami</h3>
+            <p><strong>Alamat:</strong> Pusat Jajanan Bunderan Perumnas Cibeber (PCI)</p>
+            <p><strong>Telepon:</strong> <a href="tel:+6285880880476">+62 858-8088-0476</a></p>
+            <p><strong>WhatsApp:</strong> <a href="https://wa.me/6285880880476">Chat Sekarang</a></p>
+        </section>
         
-        <div class="products">
-            <h2>Menu Spesial Kami</h2>
-            <div class="grid">
-                <div class="card">
-                    <img src="nashville-fire-cheese-1.jpg" alt="Nashville Fire Cheese Original">
-                    <div class="card-content">
-                        <h3>🔥 Nashville Fire Cheese</h3>
-                        <p>Dimsum pedas dengan topping keju melimpah dan saus nashville fire yang bikin nagih! Cocok untuk pecinta pedas.</p>
+        <section id="products" class="products">
+            <h2>Produk Kami</h2>
+            <div class="product-list">
+                <div class="product-card">
+                    <img src="nashville-fire-cheese.jpg" alt="Nashville Fire Cheese">
+                    <div class="product-info">
+                        <h3>Nashville Fire Cheese</h3>
+                        <p>Dimsum dengan saus Nashville Fire yang pedas dan topping keju melimpah. Kombinasi sempurna antara pedas dan gurih yang bikin nagih!</p>
                         <div class="price">Rp 28.000</div>
                         <a href="https://wa.me/6285880880476?text=Halo%20Makovka,%20saya%20mau%20pesan%20Nashville%20Fire%20Cheese" class="order-btn">Pesan Sekarang</a>
                     </div>
                 </div>
                 
-                <div class="card">
-                    <img src="nashville-fire-cheese-2.jpg" alt="Nashville Fire Cheese Premium">
-                    <div class="card-content">
-                        <h3>🧀 Cheese Bomb Dimsum</h3>
-                        <p>Dimsum lembut dengan ledakan keju di setiap gigitan. Tekstur juicy dan rasa keju yang creamy.</p>
-                        <div class="price">Rp 26.000</div>
-                        <a href="https://wa.me/6285880880476?text=Halo%20Makovka,%20saya%20mau%20pesan%20Cheese%20Bomb%20Dimsum" class="order-btn">Pesan Sekarang</a>
-                    </div>
-                </div>
-                
-                <div class="card">
-                    <img src="nashville-fire-cheese-3.jpg" alt="Spicy Dimsum Variant">
-                    <div class="card-content">
-                        <h3>🌶️ Spicy Fusion Dimsum</h3>
-                        <p>Perpaduan sempurna antara dimsum tradisional dengan sentuhan pedas modern. Level pedas bisa request!</p>
+                <div class="product-card">
+                    <img src="nashville-fire.jpg" alt="Nashville Fire">
+                    <div class="product-info">
+                        <h3>Nashville Fire</h3>
+                        <p>Dimsum dengan saus Nashville Fire yang glossy dan pedas menggigit. Cocok untuk pecinta makanan pedas yang ekstrem!</p>
                         <div class="price">Rp 27.000</div>
-                        <a href="https://wa.me/6285880880476?text=Halo%20Makovka,%20saya%20mau%20pesan%20Spicy%20Fusion%20Dimsum" class="order-btn">Pesan Sekarang</a>
+                        <a href="https://wa.me/6285880880476?text=Halo%20Makovka,%20saya%20mau%20pesan%20Nashville%20Fire" class="order-btn">Pesan Sekarang</a>
                     </div>
                 </div>
                 
-                <div class="card">
-                    <img src="nashville-fire-cheese-4.jpg" alt="Premium Dimsum Selection">
-                    <div class="card-content">
-                        <h3>⭐ Premium Mix Box</h3>
-                        <p>Paket isi berbagai varian dimsum pilihan. Cocok untuk acara atau makan bersama keluarga.</p>
-                        <div class="price">Rp 30.000</div>
-                        <a href="https://wa.me/6285880880476?text=Halo%20Makovka,%20saya%20mau%20pesan%20Premium%20Mix%20Box" class="order-btn">Pesan Sekarang</a>
+                <div class="product-card">
+                    <img src="cheese-Mayo.jpg" alt="Cheese Mayo">
+                    <div class="product-info">
+                        <h3>Cheese Mayo</h3>
+                        <p>Dimsum lembut dengan saus mayo keju yang creamy dan topping keju kotak. Rasa gurih dan lembut yang meleleh di mulut.</p>
+                        <div class="price">Rp 26.000</div>
+                        <a href="https://wa.me/6285880880476?text=Halo%20Makovka,%20saya%20mau%20pesan%20Cheese%20Mayo" class="order-btn">Pesan Sekarang</a>
                     </div>
                 </div>
                 
-                <div class="card">
-                    <img src="nashville-fire-cheese-5.jpg" alt="Classic Dimsum">
-                    <div class="card-content">
-                        <h3>🥢 Classic Dimsum</h3>
-                        <p>Dimsum klasik dengan isian daging dan sayuran segar. Rasa original yang tidak pernah membosankan.</p>
+                <div class="product-card">
+                    <img src="Garlci-Mayo.jpg" alt="Garlic Mayo">
+                    <div class="product-info">
+                        <h3>Garlic Mayo</h3>
+                        <p>Dimsum dengan saus garlic mayo yang kaya rasa bawang putih dan herbs. Aroma harum dan rasa gurih yang memanjakan lidah.</p>
                         <div class="price">Rp 25.000</div>
-                        <a href="https://wa.me/6285880880476?text=Halo%20Makovka,%20saya%20mau%20pesan%20Classic%20Dimsum" class="order-btn">Pesan Sekarang</a>
+                        <a href="https://wa.me/6285880880476?text=Halo%20Makovka,%20saya%20mau%20pesan%20Garlic%20Mayo" class="order-btn">Pesan Sekarang</a>
                     </div>
                 </div>
                 
-                <div class="card">
-                    <img src="nashville-fire-cheese-6.jpg" alt="Special Edition Dimsum">
-                    <div class="card-content">
-                        <h3>✨ Special Edition</h3>
-                        <p>Menu spesial minggu ini! Dimsum dengan inovasi rasa terbaru yang wajib dicoba. Limited stock!</p>
-                        <div class="price">Rp 29.000</div>
-                        <a href="https://wa.me/6285880880476?text=Halo%20Makovka,%20saya%20mau%20pesan%20Special%20Edition" class="order-btn">Pesan Sekarang</a>
+                <div class="product-card">
+                    <img src="Hot-Mentai.jpg" alt="Hot Mentai">
+                    <div class="product-info">
+                        <h3>Hot Mentai</h3>
+                        <p>Dimsum dengan saus mentai pedas khas Jepang dan taburan chili seasoning. Perpaduan creamy, gurih, dan pedas yang unik!</p>
+                        <div class="price">Rp 30.000</div>
+                        <a href="https://wa.me/6285880880476?text=Halo%20Makovka,%20saya%20mau%20pesan%20Hot%20Mentai" class="order-btn">Pesan Sekarang</a>
                     </div>
                 </div>
             </div>
-        </div>
-        
-        <footer>
-            <p><strong>Makovka Dimsum</strong></p>
-            <p>Pusat Jajanan Bunderan Perumnas Cibeber (PCI)</p>
-            <p>📞 +62 858-8088-0476</p>
-            <p style="margin-top: 15px; opacity: 0.8;">© 2026 Makovka. Semua hak dilindungi.</p>
-        </footer>
+        </section>
     </div>
+    
+    <footer>
+        <p><strong>Makovka Premium Dimsum</strong></p>
+        <p>Pusat Jajanan Bunderan Perumnas Cibeber (PCI)</p>
+        <p>📞 +62 858-8088-0476</p>
+        <p style="margin-top: 20px; opacity: 0.7;">© 2026 Makovka. All rights reserved.</p>
+    </footer>
 </body>
 </html>
